@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+ name: tomcat-rs
+ labels:
+  author: Revathi
+  type: appserver
+spec:
+ replicas: 6
+ selector:
+  matchLabels:
+   type: appserver
+ template:
+  metadata:
+   name: tomcat-pod
+   labels:
+    type: appserver
+  spec:
+   containers:
+    - name: myappserver
+      image: tomcat
+      ports:
+       - containerPort: 8080
+         hostPort: 9090
+...
+
+
+
+

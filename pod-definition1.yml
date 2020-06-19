@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+ name: nginx-pod
+ labels:
+  author: Revathi
+  type: proxyserver
+spec:
+ containers:
+  - name: webserver
+    image: nginx
+...
+
